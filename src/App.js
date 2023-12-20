@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header/Header";
+import { useState } from "react";
+import React from "react";
+import { StrechingIntervalMarks, waterIntervalMarks, getEpochTime } from "./utils";
+import Interval from "./components/Interval/Interval";
 
 function App() {
+  const [launchTimeEpoch, setLaunchTimeEpoch] = useState(getEpochTime());
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Interval
+        title="Water"
+        onChange={() => {}}
+        getAriaValueText={(value) => `${value} m`}
+        marks={waterIntervalMarks}
+        min={15}
+        max={120}
+        value={30}
+        step={15}
+      />
+      <Interval
+        title="Streching"
+        onChange={() => {}}
+        getAriaValueText={(value) => `${value} h`}
+        marks={StrechingIntervalMarks}
+        min={0.5}
+        max={4}
+        value={2}
+        step={0.5}
+      />
     </div>
   );
 }
