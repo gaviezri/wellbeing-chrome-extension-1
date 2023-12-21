@@ -10,4 +10,5 @@ export default function Header() {
 
 const H2Centered = styled.h2`
   text-align: center;
+  color: #004080;
 `;
