@@ -6,6 +6,6 @@
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "resources/health.png"
+    "default_icon": "health.png"
   }
 }

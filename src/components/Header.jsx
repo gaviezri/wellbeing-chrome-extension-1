@@ -1,14 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-export default function Header() {
-  return (
-    <>
-      <H2Centered>Reminder Intervals</H2Centered>
-    </>
-  );
-}
+import Title from "./Title";
+import { Switch } from "@mui/material";
 
-const H2Centered = styled.h2`
-  text-align: center;
-  color: #004080;
+const Header = ({isOn, setIsOn}) => {
+  return (
+    <HeaderWrapper>
+      <Title isOn={isOn} />
+      <Switch
+        checked={isOn}
+        size="small"
+        onChange={(e) => {
+          setIsOn(e.target.checked);
+          console.log("switch value: " + e.target.checked);
+        }}
+      ></Switch>
+    </HeaderWrapper>
+  );
+};
+
+export default Header;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;

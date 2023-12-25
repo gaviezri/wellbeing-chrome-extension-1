@@ -1,25 +1,49 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "@mui/material/Slider";
-import { useState } from "react";
+import { createTheme, ThemeProvider } from "@mui/material";
 
-export default function Timer({ title, setTime0, time0, initValue, ...props }) {
-  const [slilderValue, setslilderValue] = useState(initValue);
+const theme = createTheme({
+  components: {
+    MuiSlider: {
+      styleOverrides: {
+        mark: {
+          backgroundColor: "#368ce2",
+        },
+        markLabel: {
+          color: "#368ce2",
+        },
+      },
+    },
+  },
+});
+
+export default function Timer({ title, initValue, ...props }) {
+  let Identifier = title + "Interval";
+
+  if (localStorage.getItem(Identifier) === null) {
+    localStorage.setItem(Identifier, initValue);
+  }
 
   return (
     <TimerContainer>
       <TopWrapper>
         <Label>{title}</Label>
-        <Label>{/*insert time down here*/}</Label>
+        <Label>15:00</Label>
       </TopWrapper>
-      <Slider
-        aria-label={title}
-        defaultValue={initValue}
-        {...props}
-        onChange={(e, newValue) => {
-          setslilderValue(newValue);
-        }}
-      />
+      <ThemeProvider theme={theme}>
+        <Slider
+          valueLabelDisplay="auto"
+          size="small"
+          aria-label={title}
+          defaultValue={localStorage.getItem(Identifier) ?? initValue}
+          {...props}
+          onChange={(e, newValue) => {
+            localStorage.setItem(Identifier, newValue);
+          }}
+          style={{ marginLeft: "20px", marginRight: "20px" }}
+        />
+      </ThemeProvider>
     </TimerContainer>
   );
 }
@@ -40,4 +64,5 @@ const TopWrapper = styled.div`
 const Label = styled.label`
   text-align: center;
   color: #3188de;
+  margin: 5px;
 `;
