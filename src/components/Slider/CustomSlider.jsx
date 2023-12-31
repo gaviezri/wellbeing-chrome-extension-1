@@ -1,21 +1,7 @@
 import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
-import { createTheme, ThemeProvider } from "@mui/material";
-
-const theme = createTheme({
-  components: {
-    MuiSlider: {
-      styleOverrides: {
-        mark: {
-          backgroundColor: "#368ce2",
-        },
-        markLabel: {
-          color: "#368ce2",
-        },
-      },
-    },
-  },
-});
+import theme from "./theme";
+import { ThemeProvider } from "@mui/material";
 
 const CustomSlider = ({
   title,
@@ -35,7 +21,7 @@ const CustomSlider = ({
         <Slider
           valueLabelDisplay="auto"
           size="small"
-          aria-label={title}          
+          aria-label={title}
           value={sliderValue}
           {...props}
           onChange={(e, newValue) => {

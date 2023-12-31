@@ -1,7 +1,6 @@
 
 body {
-  background: rgb(79, 217, 246);
-  background: linear-gradient(160deg, rgba(79, 217, 246, 1) 32%, rgb(247, 247, 247) 75%, rgba(39, 165, 209, 1) 98%);
+  background-color: #20232a;
   align-items: center;
   border-radius: 10px;
   width: 200px;
