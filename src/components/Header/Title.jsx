@@ -12,4 +12,5 @@ export default function Title({ isOn }) {
 const Wrapper = styled.h3`
   text-align: left;
   color: #004080;
+  margin-right: 5px;
 `;

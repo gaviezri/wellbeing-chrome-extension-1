@@ -1,6 +1,6 @@
 import { createTheme} from "@mui/material";
 
-export const theme = createTheme({
+export default createTheme({
   components: {
     MuiSlider: {
       styleOverrides: {
@@ -14,3 +14,4 @@ export const theme = createTheme({
     },
   },
 });
+

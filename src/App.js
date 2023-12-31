@@ -3,17 +3,18 @@ import Header from "./components/Header/Header";
 import { useState, useEffect } from "react";
 import React from "react";
 import Timers from "./components/Timer/Timers";
+import CONSTANTS from "./constants";
 
 function App() {
-  const isAppOnKey = "isOn";
-  const storageValue = getStorageValueAsBoolean(localStorage.getItem(isAppOnKey));
+
+  const storageValue = getStorageValueAsBoolean(localStorage.getItem(CONSTANTS.isAppOnKey));
 
   const [isOn, setIsOn] = useState(storageValue);
 
   useEffect(() => {
     window.addEventListener("unload", () => {
       // ! removed
-      localStorage.setItem(isAppOnKey, isOn);
+      localStorage.setItem(CONSTANTS.isAppOnKey, isOn);
       console.log("app-on set to" + isOn);
     });
   }, []);

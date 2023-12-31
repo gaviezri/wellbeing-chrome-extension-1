@@ -28,7 +28,6 @@ const CustomSlider = ({
             localStorage.setItem(intervalLengthKey, newValue);
             setSliderValue(newValue);
           }}
-          style={{ marginLeft: "20px", marginRight: "20px" }}
         />
       </ThemeProvider>
     </>
