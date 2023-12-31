@@ -35,14 +35,12 @@ const CustomSlider = ({
         <Slider
           valueLabelDisplay="auto"
           size="small"
-          aria-label={title}
+          aria-label={title}          
           value={sliderValue}
           {...props}
           onChange={(e, newValue) => {
             localStorage.setItem(intervalLengthKey, newValue);
             setSliderValue(newValue);
-            setIntervalLength(newValue);
-            resetTime(newValue);
           }}
           style={{ marginLeft: "20px", marginRight: "20px" }}
         />
