@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
+import { strechingIntervalMarks, waterIntervalMarks } from "../../utils";
+import Timer from "./Timer";
 
-const Timers = ({isOn}) => {
-    return (
-        <>
-           {isOn && (
+const Timers = ({ isOn }) => {
+  return (
+    <>
+      {isOn && (
         <Timer
           title="Water"
-          time0={launchTimeEpoch}
-          setTime0={() => {setLaunchTimeEpoch(getEpochTime())}}
           getAriaValueText={(value) => `${value} m`}
           marks={waterIntervalMarks}
           min={15}
@@ -21,15 +21,15 @@ const Timers = ({isOn}) => {
           title="Streching"
           onChange={() => {}}
           getAriaValueText={(value) => `${value} h`}
-          marks={StrechingIntervalMarks}
+          marks={strechingIntervalMarks}
           min={0.5}
           max={4}
           initValue={2}
           step={0.5}
         />
-      )}  
-        </>
-    );
+      )}
+    </>
+  );
 };
 
 export default Timers;
