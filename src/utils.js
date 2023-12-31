@@ -2,28 +2,6 @@ export function getEpochTimeInSeconds() {
   return Math.floor(new Date().getTime() / 1000);
 }
 
-export const waterIntervalMarks = [
-  { value: 15, label: 15 },
-  { value: 30, label: undefined },
-  { value: 45, label: undefined },
-  { value: 60, label: undefined },
-  { value: 75, label: undefined },
-  { value: 90, label: undefined },
-  { value: 105, label: undefined },
-  { value: 120, label: 120 },
-];
-
-export const strechingIntervalMarks = [
-  { value: 0.5, label: 0.5 },
-  { value: 1, label: undefined },
-  { value: 1.5, label: undefined },
-  { value: 2, label: undefined },
-  { value: 2.5, label: undefined },
-  { value: 3, label: undefined },
-  { value: 3.5, label: undefined },
-  { value: 4, label: 4 },
-];
-
 export function formatTime(seconds) {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);

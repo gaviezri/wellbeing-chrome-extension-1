@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import Slider from "@mui/material/Slider";
 import { useState } from "react";
+import CustomSlider from "../Slider/CustomSlider";
 
 export default function Timer({ title, initValue, ...props }) {
   const [slilderValue, setslilderValue] = useState(initValue);
-  console.log("HELLO TIMER")
   return (
     <TimerContainer>
       <TopWrapper>
         <Label>{title}</Label>
-        <Label>TIME</ Label>
+        <Label>TIME</Label>
       </TopWrapper>
-      <Slider
+      <CustomSlider
         aria-label={title}
         defaultValue={initValue}
         {...props}
