@@ -3,14 +3,14 @@ import styled from "styled-components";
 import Slider from "@mui/material/Slider";
 import { useState } from "react";
 
-export default function Timer({ title, setTime0, time0, initValue, ...props }) {
+export default function Timer({ title, initValue, ...props }) {
   const [slilderValue, setslilderValue] = useState(initValue);
 
   return (
     <TimerContainer>
       <TopWrapper>
         <Label>{title}</Label>
-        <Label>{/*insert time down here*/}</Label>
+        <Label>TIME</ Label>
       </TopWrapper>
       <Slider
         aria-label={title}
