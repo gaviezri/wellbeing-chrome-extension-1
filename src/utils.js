@@ -48,3 +48,7 @@ export function calculateRemainingTimeBasedOnIntervalAndStartTime(startTimeInSec
   console.log(time);
   return time;
 }
+
+export function getRandInt(minimum = 0, maximum) {
+  return Math.floor(Math.random() * (maximum - minimum)) + minimum;
+}
