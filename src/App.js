@@ -11,20 +11,17 @@ function App() {
   const [isOn, setIsOn] = useState(storageValue);
 
   useEffect(() => {
-    localStorage.setItem(isAppOnKey, isOn);
-  }, [isOn]);
-
-  useEffect(() => {
     window.addEventListener("unload", () => {
       // ! removed
       localStorage.setItem(isAppOnKey, isOn);
+      console.log("app-on set to" + isOn);
     });
   }, []);
 
   return (
     <div className="App">
       <Header isOn={isOn} setIsOn={setIsOn} />
-      {isOn && <Timers />}
+      <Timers isOn={isOn} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Timer({ title, initValue, ...props }) {
   const [slilderValue, setslilderValue] = useState(initValue);
-
+  console.log("HELLO TIMER")
   return (
     <TimerContainer>
       <TopWrapper>

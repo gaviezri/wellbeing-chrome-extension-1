@@ -3,6 +3,7 @@ import { strechingIntervalMarks, waterIntervalMarks } from "../../utils";
 import Timer from "./Timer";
 
 const Timers = ({ isOn }) => {
+  console.log(isOn)
   return (
     <>
       {isOn && (
