@@ -1,5 +1,7 @@
 export const CONSTANTS = {
   isAppOnKey: "isOn",
+  waterIntervalKey: "waterInterval",
+  strechIntervalKey: "strechInterval"
 };
 
 

@@ -3,30 +3,19 @@ import Slider from "@mui/material/Slider";
 import theme from "./theme";
 import { ThemeProvider } from "@mui/material";
 
-const CustomSlider = ({
-  title,
-  initValue,
-  intervalLengthKey,
-  hrs = false,
-  setIntervalLength,
-  resetTime,
-  value,
-  ...props
-}) => {
-  const [sliderValue, setSliderValue] = useState(localStorage.getItem(intervalLengthKey));
-
+const CustomSlider = (props) => {
+  const [interval, setInterval] = useState(localStorage.getItem(props.storageKey) ?? props.initInterval);
   return (
     <>
       <ThemeProvider theme={theme}>
         <Slider
           valueLabelDisplay="auto"
           size="small"
-          aria-label={title}
-          value={sliderValue}
+          value={interval}
           {...props}
-          onChange={(e, newValue) => {
-            localStorage.setItem(intervalLengthKey, newValue);
-            setSliderValue(newValue);
+          onChange={(e) => {
+            setInterval(e.target.value);
+            localStorage.setItem(props.storageKey, e.target.value);
           }}
         />
       </ThemeProvider>

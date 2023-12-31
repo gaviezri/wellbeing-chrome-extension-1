@@ -1,11 +1,14 @@
+import CONSTANTS from "../../constants";
+
 class TimerConfig {
-  constructor(marks, initInterval, min, max, step, valueLabelFormat) {
+  constructor(marks, initInterval, min, max, step, valueLabelFormat, storageKey) {
     this.marks = marks;
     this.initInterval = initInterval;
     this.min = min;
     this.max = max;
     this.step = step;
     this.valueLabelFormat = valueLabelFormat;
+    this.storageKey = storageKey
   }
 }
 
@@ -26,7 +29,8 @@ export const strechConfig = new TimerConfig(
   0.5,
   (value) => {
     return `${value} h`;
-  }
+  },
+ CONSTANTS.strechIntervalKey
 );
 
 export const waterConfig = new TimerConfig(
@@ -46,5 +50,6 @@ export const waterConfig = new TimerConfig(
   15,
   (value) => {
     return `${value} m`;
-  }
+  },
+  CONSTANTS.waterIntervalKey
 );

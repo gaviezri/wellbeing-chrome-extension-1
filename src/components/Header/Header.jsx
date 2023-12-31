@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Title from "./Title";
 import { Switch } from "@mui/material";
 import Espresso from "../../images/whiteMug16.png";
+import CONSTANTS from "../../constants";
 
 const Header = ({ isOn, setIsOn }) => {
   return (
@@ -14,7 +15,7 @@ const Header = ({ isOn, setIsOn }) => {
           size="small"
           onChange={(e) => {
             setIsOn(e.target.checked);
-            console.log("switch value: " + e.target.checked);
+            localStorage.setItem(CONSTANTS.isAppOnKey, e.target.checked);
           }}
         ></Switch>
       </HeaderWrapper>

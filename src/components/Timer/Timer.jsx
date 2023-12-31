@@ -1,24 +1,15 @@
-import React from "react";
-import styled from "styled-components";
 import { useState } from "react";
+import styled from "styled-components";
 import CustomSlider from "../Slider/CustomSlider";
 
-export default function Timer({ title, initValue, ...props }) {
-  const [slilderValue, setslilderValue] = useState(initValue);
+export default function Timer({ title, ...props }) {
   return (
     <TimerContainer>
       <TopWrapper>
         <Label>{title}</Label>
         <Label>TIME</Label>
       </TopWrapper>
-      <CustomSlider
-        aria-label={title}
-        defaultValue={initValue}
-        {...props}
-        onChange={(e, newValue) => {
-          setslilderValue(newValue);
-        }}
-      />
+      <CustomSlider {...props} />
     </TimerContainer>
   );
 }
