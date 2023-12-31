@@ -9,7 +9,7 @@ const Timers = ({ isOn }) => {
       {isOn && (
         <Timer
           title="Water"
-          getAriaValueText={(value) => `${value} m`}
+          valueLabelFormat={(value) => `${value} m`}
           marks={waterIntervalMarks}
           min={15}
           max={120}
@@ -21,7 +21,7 @@ const Timers = ({ isOn }) => {
         <Timer
           title="Streching"
           onChange={() => {}}
-          getAriaValueText={(value) => `${value} h`}
+          valueLabelFormat={(value) => `${value} h`}
           marks={strechingIntervalMarks}
           min={0.5}
           max={4}
